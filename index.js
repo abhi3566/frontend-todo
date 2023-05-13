@@ -61,7 +61,7 @@ function addToDo(event) {
         // CLearing the input;
         toDoInput.value = '';
     }
-
+    totalTasks();
 }   
 
 
@@ -90,7 +90,8 @@ function deletecheck(event){
     {
         item.parentElement.classList.toggle("completed");
     }
-
+   
+    totalTasks();
 
 }
 
@@ -203,3 +204,12 @@ function changeTheme(color) {
 var dt = new Date();
 document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
+// display total tasks
+function totalTasks() {
+    let todos = localStorage.getItem('todos') || '[]'; // Get the todos array from localStorage or initialize it as an empty array
+  let totalTask = JSON.parse(todos).length; // Parse the JSON string and get the length of the todos array
+  console.log(totalTask);
+  document.getElementById("totalTasks").innerHTML = totalTask;
+ }
+
+ totalTasks();

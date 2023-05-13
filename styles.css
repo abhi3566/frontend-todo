@@ -34,7 +34,7 @@ body {
   transition: 0.3s linear;
 }
 
-#header, #form, #datetime {
+#header, #form, #datetime #totalTasks {
   margin: 0 1rem;
   min-height: 10vh;
   width: 100%;
